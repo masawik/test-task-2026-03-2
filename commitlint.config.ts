@@ -1,0 +1,38 @@
+import type { UserConfig } from '@commitlint/types'
+
+const config: UserConfig = {
+  extends: [ '@commitlint/config-conventional' ],
+
+  helpUrl: 'https://www.conventionalcommits.org/',
+
+  rules: {
+    'type-enum': [
+      2,
+      'always',
+      [
+        'feat',
+        'fix',
+        'docs',
+        'style',
+        'refactor',
+        'perf',
+        'test',
+        'build',
+        'ci',
+        'chore',
+        'revert',
+      ],
+    ],
+
+    'type-case': [ 2, 'always', 'lower-case' ],
+    'subject-case': [ 0 ],
+    'subject-empty': [ 2, 'never' ],
+    'subject-full-stop': [ 2, 'never', '.' ],
+    'header-max-length': [ 2, 'always', 100 ],
+    'body-leading-blank': [ 1, 'always' ],
+    'body-max-line-length': [ 2, 'always', 200 ],
+    'footer-leading-blank': [ 1, 'always' ],
+  },
+}
+
+export default config

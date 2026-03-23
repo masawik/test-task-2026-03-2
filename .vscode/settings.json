@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": false,
+  "stylelint.validate": ["scss"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

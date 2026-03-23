@@ -1,0 +1,12 @@
+if ! pnpm exec commitlint --edit $1 > /dev/null 2>&1; then
+  echo ""
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "❌ Commit message format is incorrect"
+  echo ""
+  echo "ℹ️  Please review the commit message format:"
+  echo "   https://www.conventionalcommits.org/"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo ""
+  exit 1
+fi
