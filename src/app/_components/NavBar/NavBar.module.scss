@@ -1,0 +1,40 @@
+.container {
+  padding-inline: space(2);
+  border-bottom: 2px solid color("border");
+}
+
+.content {
+  @include container;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(1);
+
+  margin-inline: -(space(1));
+  padding-block: space(2);
+}
+
+.tab {
+  display: block;
+  padding: space(4) space(1);
+  font-weight: 500;
+  color: color("text-light");
+}
+
+@media (max-width: 768px) {
+  .list {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .list {
+    justify-content: flex-start;
+  }
+
+  .tab {
+    padding: space(2) space(1);
+  }
+}

@@ -1,0 +1,53 @@
+.container {
+  padding-inline: space(2);
+  border-bottom: 4px solid color("accent");
+  background-color: color("surface-bg");
+}
+
+.content {
+  @include container;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: space(4);
+
+  color: color("text-foreground");
+}
+
+.logo {
+  font-family: font("heading");
+  font-size: space(10);
+  font-weight: bold;
+}
+
+.logo__dot {
+  color: color("accent");
+}
+
+.banner {
+  max-width: 50%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: space(4);
+  }
+
+  .banner {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 425px) {
+  .logo {
+    font-size: space(6);
+  }
+
+  .container {
+    border-bottom-width: 2px;
+  }
+}

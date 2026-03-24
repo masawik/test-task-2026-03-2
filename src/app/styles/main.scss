@@ -1,3 +1,17 @@
-@use "./base";
+@use "./spaces";
+@use "./colors";
+@use "./typography";
+@use "./globals";
 
-@layer reset, base;
+@layer reset {
+  @import "./vendors/modern-normalize";
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+@layer reset, base, theme, components;

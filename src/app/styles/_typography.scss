@@ -1,0 +1,32 @@
+$fallbackFonts:
+  system-ui,
+  -apple-system,
+  blinkmacsystemfont,
+  "Segoe UI",
+  sans-serif;
+
+// fonts are imported in a "src/app/fonts.ts"
+$fonts-semantic: (
+  heading: (
+    var(--font-montserrat),
+    #{$fallbackFonts},
+  ),
+  body: (
+    var(--font-open-sans),
+    #{$fallbackFonts},
+  ),
+);
+
+@function font($name) {
+  @return map-get($fonts-semantic, $name);
+}
+
+@function font-var($name) {
+  @return var(--font-#{$name});
+}
+
+:root {
+  @each $name, $value in $fonts-semantic {
+    --font-#{$name}: #{$value};
+  }
+}

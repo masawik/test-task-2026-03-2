@@ -1,0 +1,40 @@
+@use "./abstracts/variables" as v;
+@use "./colors" as c;
+@use "./typography" as t;
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+:root {
+  --content-max-width: #{v.$content-max-width};
+}
+
+@layer base {
+  html {
+    font-family: font("body");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: t.font("heading");
+  }
+}
+
+@layer components {
+  .icon {
+    color: c.color("accent");
+  }
+}

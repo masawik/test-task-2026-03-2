@@ -1,0 +1,44 @@
+$colors-primitive: (
+  white: #ffffff,
+  gray: (
+    200: #e5eaee,
+  ),
+  blue: (
+    700: #2b2c42,
+    750: #1d1e3b,
+    800: #1e1f29,
+    900: #14151c,
+  ),
+  red: (
+    500: #d10026,
+  ),
+);
+
+$colors-semantic: (
+  text-light: map-get(map-get($colors-primitive, blue), 700),
+  text: map-get(map-get($colors-primitive, blue), 750),
+  text-foreground: map-get($colors-primitive, white),
+  background: map-get($colors-primitive, white),
+  accent: map-get(map-get($colors-primitive, red), 500),
+  border: map-get(map-get($colors-primitive, gray), 200),
+  primary: map-get(map-get($colors-primitive, blue), 800),
+  surface-bg: map-get(map-get($colors-primitive, blue), 900),
+);
+
+@function color($name, $shade: null) {
+  @if $shade {
+    @return map-get(map-get($colors-primitive, $name), $shade);
+  }
+
+  @return map-get($colors-semantic, $name);
+}
+
+@function color-var($name) {
+  @return var(--color-#{$name});
+}
+
+:root {
+  @each $name, $value in $colors-semantic {
+    --color-#{$name}: #{$value};
+  }
+}

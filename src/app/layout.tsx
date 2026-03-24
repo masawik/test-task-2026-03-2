@@ -1,3 +1,4 @@
+import { Header } from './_components/Header'
 import { appFontVariableClassNames } from './fonts'
 
 import type { Metadata } from 'next'
@@ -16,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={appFontVariableClassNames}>
-      <body>{children}</body>
+      <body>
+        <Header />
+
+        {children}
+      </body>
     </html>
   )
 }

@@ -1,0 +1,60 @@
+.container {
+  padding: space(1) space(2);
+  color: color("text-foreground");
+  background-color: color("primary");
+}
+
+.content {
+  @include container;
+
+  display: flex;
+  flex-direction: row;
+  gap: space(4);
+  justify-content: space-between;
+
+  :global(.icon) {
+    @include size(space(4));
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: row;
+  gap: space(3);
+  align-items: center;
+  order: 0;
+}
+
+.linkWithIcon {
+  display: flex;
+  gap: 0.5ch;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    flex-direction: column;
+    gap: space(1);
+  }
+}
+
+@media (max-width: 425px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .contacts {
+    order: 1;
+  }
+
+  .userBlock {
+    display: flex;
+    justify-content: flex-end;
+    padding-block: space(2);
+  }
+
+  .userBlock__link {
+    padding: space(2);
+    border: 1px solid color("border");
+  }
+}
