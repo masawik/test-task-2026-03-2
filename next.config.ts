@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import '@/appEnv'
 
 const nextConfig: NextConfig = {
   /* config options here */
