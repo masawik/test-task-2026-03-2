@@ -1,11 +1,10 @@
+@use "./vendors/modern-normalize";
 @use "./spaces";
 @use "./colors";
 @use "./typography";
 @use "./globals";
 
 @layer reset {
-  @import "./vendors/modern-normalize";
-
   ul,
   ol {
     margin: 0;

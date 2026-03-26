@@ -10,6 +10,8 @@ Document
 Use a better box model (opinionated).
 */
 
+@layer reset {
+
 *,
 ::before,
 ::after {
@@ -201,4 +203,6 @@ Add the correct display in Chrome and Safari.
 
 summary {
   display: list-item;
+}
+
 }
