@@ -1,0 +1,29 @@
+@use "../utils" as *;
+
+@layer components {
+  .button {
+    padding: space(2) space(4);
+    border-radius: space(1);
+
+    font-size: larger;
+    color: color("text-foreground");
+
+    background-color: color("primary");
+  }
+
+  .button:focus-visible {
+    outline: 2px solid color("primary");
+    outline-offset: 2px;
+  }
+
+  .button:active {
+    transform: scale(0.98);
+  }
+
+  .button:disabled {
+    cursor: not-allowed;
+    transform: none;
+    opacity: 0.5;
+    box-shadow: none;
+  }
+}

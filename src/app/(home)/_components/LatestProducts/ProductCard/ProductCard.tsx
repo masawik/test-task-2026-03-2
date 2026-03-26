@@ -1,5 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
+import { getCurrentUser } from '@/auth/currentUser'
+import { AddToCart } from '@/components/AddToCart'
 import { cn } from '@/lib'
 
 import s from './ProductCard.module.scss'
@@ -14,11 +17,13 @@ export interface ProductCardProps {
 
 const CURRENCY_CHAR = '$'
 
-export const ProductCard = ({
+export const ProductCard = async ({
   product,
   priorityImage,
   className,
 }: ProductCardProps) => {
+  const user = await getCurrentUser()
+
   return (
     <article className={cn(s.Card, className)}>
       {/* TODO Schema.org */}
@@ -35,13 +40,17 @@ export const ProductCard = ({
       </div>
 
       <div className={s.info}>
-        <div className={s.title}>{product.title}</div>
+        <Link href="#" className={s.title}>
+          {product.title}
+        </Link>
         <div className={s.category}>{product.category}</div>
         <div className={s.price}>
           {CURRENCY_CHAR}
           {product.price}
         </div>
       </div>
+
+      {user && <AddToCart productId={product.id} />}
     </article>
   )
 }
