@@ -1,2 +1,2 @@
 export { type SessionPayload } from './schemas'
-export { getSession, setSessionByTokens } from './lib'
+export { getSession, setSessionByTokens, clearSession } from './lib'

@@ -11,6 +11,7 @@ import type {
   RefreshRequestDTO,
   RefreshResponseDTO,
   RequestItemsOptions,
+  UserDTO,
 } from './schemas'
 
 export const logIn = async (creds: LogInRequestDataDTO) => {
@@ -49,8 +50,14 @@ export const getProducts = async <
   return response.data
 }
 
+export const getMe = async () => {
+  const response = await backendApiClient.get<UserDTO>('/auth/me')
+  return response.data
+}
+
 export const backendApi = {
   logIn,
   refreshToken,
   getProducts,
+  getMe,
 }

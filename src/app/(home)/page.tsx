@@ -1,4 +1,4 @@
-import { LatestProducts } from './LatestProducts/LatestProducts'
+import { LatestProducts } from './_components/LatestProducts/LatestProducts'
 import s from './page.module.scss'
 
 export default async function Home() {

@@ -1,0 +1,11 @@
+.button {
+  display: flex;
+  gap: 0.5ch;
+  align-items: center;
+}
+
+.pending {
+  opacity: 0.5;
+  transition-duration: 120ms;
+  transition-property: opacity;
+}

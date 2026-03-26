@@ -1,6 +1,6 @@
-import { BannerHeader } from '../BannerHeader'
-import { NavBar } from '../NavBar'
-import { TopHeader } from '../TopHeader'
+import { BannerHeader } from './BannerHeader'
+import { NavBar } from './NavBar'
+import { TopHeader } from './TopHeader'
 
 export const Header = () => {
   return (

@@ -1,0 +1,51 @@
+@layer components {
+  .spinner {
+    display: grid;
+
+    aspect-ratio: 1;
+    width: 50px;
+    border-radius: 50%;
+
+    background:
+      linear-gradient(
+          0deg,
+          rgb(255 255 255 / 40%) 30%,
+          transparent 0 70%,
+          rgb(255 255 255 / 90%) 0
+        )
+        50% / 8% 100%,
+      linear-gradient(
+          90deg,
+          rgb(255 255 255 / 20%) 30%,
+          transparent 0 70%,
+          rgb(255 255 255 / 70%) 0
+        )
+        50% / 100% 8%;
+    background-repeat: no-repeat;
+
+    animation: spin 1s infinite steps(12);
+  }
+  .spinner::before,
+  .spinner::after {
+    content: "";
+
+    transform: rotate(30deg);
+
+    grid-area: 1/1;
+
+    border-radius: 50%;
+
+    opacity: 0.915;
+    background: inherit;
+  }
+  .spinner::after {
+    transform: rotate(60deg);
+    opacity: 0.83;
+  }
+
+  @keyframes spin {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}

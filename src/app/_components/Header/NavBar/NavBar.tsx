@@ -4,12 +4,12 @@ import s from './NavBar.module.scss'
 
 const ROUTES = [
   { href: '/', title: 'Home' },
-  { href: '*', title: 'Hot Deals' },
-  { href: '*', title: 'Categories' },
-  { href: '*', title: 'Laptops' },
-  { href: '*', title: 'Smartphones' },
-  { href: '*', title: 'Cameras' },
-  { href: '*', title: 'Accessories' },
+  { href: '#', title: 'Hot Deals' },
+  { href: '#', title: 'Categories' },
+  { href: '#', title: 'Laptops' },
+  { href: '#', title: 'Smartphones' },
+  { href: '#', title: 'Cameras' },
+  { href: '#', title: 'Accessories' },
 ]
 
 export const NavBar = () => {

@@ -9,7 +9,7 @@ import { isDev } from '@/config/constants'
 import { isApiClientError } from '@/lib/ApiClient'
 
 import { LogInFormDataSchema, type LogInFormState } from './schemas'
-import { setSessionByTokens } from './session'
+import { setSessionByTokens, clearSession } from './session'
 
 const FALLBACK_ERROR_MESSAGE =
   'An unexpected error has occurred. Try again later.'
@@ -47,3 +47,5 @@ export const logIn = async (
     return { message: FALLBACK_ERROR_MESSAGE }
   }
 }
+
+export const logOut = clearSession

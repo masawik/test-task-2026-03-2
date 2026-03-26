@@ -34,3 +34,8 @@ export const getSession = cache(async () => {
   const payload = await decodeSessionPayload(session)
   return payload || undefined
 })
+
+export const clearSession = async () => {
+  const cookieStore = await cookies()
+  cookieStore.delete(SESSION_COOKIE_NAME)
+}

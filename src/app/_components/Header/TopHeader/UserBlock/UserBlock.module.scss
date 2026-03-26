@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  gap: space(4);
+}
+
+.link {
+  display: flex;
+  gap: 0.5ch;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .button {
+    padding: space(2);
+    border: 1px solid color("border");
+  }
+}

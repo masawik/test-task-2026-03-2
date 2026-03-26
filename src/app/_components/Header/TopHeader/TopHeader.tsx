@@ -1,9 +1,10 @@
-import Link from 'next/link'
+import { Suspense } from 'react'
 
-import { Mail, MapPin, Phone, User } from '@/components/icons'
+import { Mail, MapPin, Phone } from '@/components/icons'
 import { cn } from '@/lib'
 
 import s from './TopHeader.module.scss'
+import { UserBlock } from './UserBlock/UserBlock'
 
 export type TopHeaderProps = React.ComponentProps<'div'>
 
@@ -31,13 +32,9 @@ export const TopHeader = ({ className, ...props }: TopHeaderProps) => {
         </address>
 
         <div className={s.userBlock}>
-          <Link
-            className={`${s.linkWithIcon} ${s.userBlock__link}`}
-            href="/login"
-          >
-            <User />
-            Login
-          </Link>
+          <Suspense fallback={<div className={cn('spinner', s.loader)} />}>
+            <UserBlock />
+          </Suspense>
         </div>
       </div>
     </div>

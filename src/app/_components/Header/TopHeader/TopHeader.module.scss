@@ -31,10 +31,15 @@
   align-items: center;
 }
 
+.loader {
+  @include size(1rem);
+}
+
 @media (max-width: 768px) {
   .contacts {
     flex-direction: column;
     gap: space(1);
+    align-items: flex-start;
   }
 }
 
@@ -44,6 +49,7 @@
   }
 
   .contacts {
+    align-items: center;
     order: 1;
   }
 
@@ -51,10 +57,5 @@
     display: flex;
     justify-content: flex-end;
     padding-block: space(2);
-  }
-
-  .userBlock__link {
-    padding: space(2);
-    border: 1px solid color("border");
   }
 }
