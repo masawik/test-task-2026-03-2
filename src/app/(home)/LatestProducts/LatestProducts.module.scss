@@ -1,0 +1,25 @@
+.container {
+  padding-inline: space(2);
+}
+
+.content {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+}
+
+.title {
+  color: color("primary");
+}
+
+.productsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: space(3);
+}
+
+.productsList__item {
+  height: 100%;
+}

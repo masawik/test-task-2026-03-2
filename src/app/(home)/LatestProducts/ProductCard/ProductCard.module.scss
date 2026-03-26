@@ -1,0 +1,46 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
+  align-items: center;
+
+  padding: space(3);
+  border: 1px solid color("border");
+  border-radius: space(1);
+}
+
+.imageContainer {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+.image {
+  aspect-ratio: 1;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+  align-items: center;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.category {
+  color: color("text-secondary");
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: color("accent");
+}

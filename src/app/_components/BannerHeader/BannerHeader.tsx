@@ -14,6 +14,7 @@ export const BannerHeader = () => {
           src="https://dummyjson.com/image/600x70"
           className={s.banner}
           alt="banner"
+          loading="eager"
           width={600}
           height={70}
         />

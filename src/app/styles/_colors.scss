@@ -2,6 +2,7 @@ $colors-primitive: (
   white: #ffffff,
   gray: (
     200: #e5eaee,
+    300: #bbbbbb,
   ),
   blue: (
     700: #2b2c42,
@@ -17,6 +18,7 @@ $colors-primitive: (
 $colors-semantic: (
   text-light: map-get(map-get($colors-primitive, blue), 700),
   text: map-get(map-get($colors-primitive, blue), 750),
+  text-secondary: map-get(map-get($colors-primitive, gray), 300),
   text-foreground: map-get($colors-primitive, white),
   background: map-get($colors-primitive, white),
   accent: map-get(map-get($colors-primitive, red), 500),
