@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $fallbackFonts:
   system-ui,
   -apple-system,
@@ -18,7 +20,7 @@ $fonts-semantic: (
 );
 
 @function font($name) {
-  @return map-get($fonts-semantic, $name);
+  @return map.get($fonts-semantic, $name);
 }
 
 @function font-var($name) {

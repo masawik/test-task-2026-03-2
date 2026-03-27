@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:map";
 
 $colors-primitive: (
   white: #ffffff,
@@ -21,26 +22,26 @@ $colors-primitive: (
 );
 
 $colors-semantic: (
-  text-light: map-get(map-get($colors-primitive, blue), 700),
-  text: map-get(map-get($colors-primitive, blue), 750),
-  text-secondary: map-get(map-get($colors-primitive, gray), 300),
-  text-foreground: map-get($colors-primitive, white),
-  error-text: map-get(map-get($colors-primitive, red), 450),
-  background: map-get($colors-primitive, white),
-  accent: map-get(map-get($colors-primitive, red), 500),
-  border: map-get(map-get($colors-primitive, gray), 200),
-  primary: map-get(map-get($colors-primitive, blue), 800),
-  surface-bg: map-get(map-get($colors-primitive, blue), 900),
-  error-border: map-get(map-get($colors-primitive, red), 300),
-  error-bg: map-get(map-get($colors-primitive, red), 200),
+  text-light: map.get(map.get($colors-primitive, blue), 700),
+  text: map.get(map.get($colors-primitive, blue), 750),
+  text-secondary: map.get(map.get($colors-primitive, gray), 300),
+  text-foreground: map.get($colors-primitive, white),
+  error-text: map.get(map.get($colors-primitive, red), 450),
+  background: map.get($colors-primitive, white),
+  accent: map.get(map.get($colors-primitive, red), 500),
+  border: map.get(map.get($colors-primitive, gray), 200),
+  primary: map.get(map.get($colors-primitive, blue), 800),
+  surface-bg: map.get(map.get($colors-primitive, blue), 900),
+  error-border: map.get(map.get($colors-primitive, red), 300),
+  error-bg: map.get(map.get($colors-primitive, red), 200),
 );
 
 @function color($name, $shade: null) {
   @if $shade {
-    @return map-get(map-get($colors-primitive, $name), $shade);
+    @return map.get(map.get($colors-primitive, $name), $shade);
   }
 
-  @return map-get($colors-semantic, $name);
+  @return map.get($colors-semantic, $name);
 }
 
 @function color-var($name) {

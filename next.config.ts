@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   cacheComponents: true,
   sassOptions: {
+    silenceDeprecations: [ 'if-function' ],
     additionalData: `
       @use '@/app/styles/utils' as *;
     `,
