@@ -2,6 +2,7 @@ import type { NextConfig } from 'next'
 import '@/appEnv'
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   reactCompiler: true,
   cacheComponents: true,
   sassOptions: {

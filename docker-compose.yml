@@ -1,0 +1,13 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        API_URL: ${API_URL}
+        DUMMY_TOKEN_EXPIRES_IN_MINS: ${DUMMY_TOKEN_EXPIRES_IN_MINS}
+        SESSION_SECRET: ${SESSION_SECRET}
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
