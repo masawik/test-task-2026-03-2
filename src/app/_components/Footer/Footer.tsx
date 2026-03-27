@@ -1,9 +1,9 @@
 import { getCurrentUser } from '@/auth/currentUser'
 
+import { CurrentYear } from './CurrentYear'
 import s from './Footer.module.scss'
 
 export const Footer = async () => {
-  const currentYear = new Date().getFullYear()
   const user = await getCurrentUser()
 
   return (
@@ -11,7 +11,7 @@ export const Footer = async () => {
       <div className={s.content}>
         {null}
 
-        <span className={s.year}>{currentYear}</span>
+        <CurrentYear className={s.year} />
 
         {user && <span className={s.user}>Logged as {user.email}</span>}
       </div>
