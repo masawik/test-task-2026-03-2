@@ -1,0 +1,29 @@
+.container {
+  border-top: 2px solid color("accent");
+  background-color: color("surface-bg");
+}
+
+.content {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: space(2);
+  align-items: center;
+
+  padding-block: space(4);
+
+  color: color("text-foreground");
+  text-align: center;
+}
+
+.year {
+  grid-column: 2;
+  justify-self: center;
+  font-weight: 600;
+}
+
+.user {
+  grid-column: 3;
+  justify-self: end;
+}

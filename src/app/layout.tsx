@@ -1,5 +1,7 @@
+import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
 import { appFontVariableClassNames } from './fonts'
+import s from './layout.module.scss'
 
 import type { Metadata } from 'next'
 
@@ -17,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={appFontVariableClassNames}>
-      <body>
+      <body className={s.body}>
         <Header />
 
-        {children}
+        <div>{children}</div>
+
+        <Footer />
       </body>
     </html>
   )
