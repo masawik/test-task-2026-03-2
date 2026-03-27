@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
 import { appFontVariableClassNames } from './fonts'
@@ -33,7 +35,9 @@ export default function RootLayout({
 
         <div>{children}</div>
 
-        <Footer />
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   )
