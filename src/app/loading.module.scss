@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  justify-content: center;
+  padding-block: space(10);
+}
+
+.spinner {
+  @include size(space(6));
+}

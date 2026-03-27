@@ -1,3 +1,9 @@
+import s from './loading.module.scss'
+
 export default function loading() {
-  return <h1>LOADING</h1>
+  return (
+    <div className={s.container}>
+      <div className={`spinner dark ${s.spinner}`} />
+    </div>
+  )
 }
