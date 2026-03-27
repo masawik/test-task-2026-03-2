@@ -1,8 +1,9 @@
 @use "@/app/styles/abstracts/variables" as v;
 
-@mixin container($max-width: v.$content-max-width) {
+@mixin container($padding-inline: 0.5rem, $max-width: v.$content-max-width) {
   max-width: $max-width;
   margin-inline: auto;
+  padding-inline: $padding-inline;
 }
 
 @mixin size($value) {

@@ -1,5 +1,4 @@
 .container {
-  padding: space(1) space(2);
   color: color("text-foreground");
   background-color: color("primary");
 }
@@ -11,6 +10,8 @@
   flex-direction: row;
   gap: space(4);
   justify-content: space-between;
+
+  padding-block: space(1);
 
   :global(.icon) {
     @include size(space(4));

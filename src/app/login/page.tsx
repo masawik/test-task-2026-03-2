@@ -91,38 +91,36 @@ export const LogIn = () => {
 
   return (
     <main className={s.container}>
-      <div className={s.content}>
-        <h1>Login</h1>
+      <h1>Login</h1>
 
-        <form className={s.form} onSubmit={handleSubmit} ref={formRef}>
-          <TextField
-            label="Username"
-            name="username"
-            type="text"
-            errorMessage={errors?.fieldErrors.username?.[0]}
-          />
+      <form className={s.form} onSubmit={handleSubmit} ref={formRef}>
+        <TextField
+          label="Username"
+          name="username"
+          type="text"
+          errorMessage={errors?.fieldErrors.username?.[0]}
+        />
 
-          <TextField
-            label="Password"
-            name="password"
-            type="password"
-            errorMessage={errors?.fieldErrors.password?.[0]}
-          />
+        <TextField
+          label="Password"
+          name="password"
+          type="password"
+          errorMessage={errors?.fieldErrors.password?.[0]}
+        />
 
-          {apiErrorMessage && (
-            <div className={s.formError}>Error: {apiErrorMessage}</div>
-          )}
+        {apiErrorMessage && (
+          <div className={s.formError}>Error: {apiErrorMessage}</div>
+        )}
 
-          <Button
-            className={cn('button', s.submitBtn)}
-            type="submit"
-            disabled={!!errors}
-            loading={isPending}
-          >
-            Login
-          </Button>
-        </form>
-      </div>
+        <Button
+          className={cn('button', s.submitBtn)}
+          type="submit"
+          disabled={!!errors}
+          loading={isPending}
+        >
+          Login
+        </Button>
+      </form>
     </main>
   )
 }

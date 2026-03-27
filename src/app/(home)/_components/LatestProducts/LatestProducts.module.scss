@@ -1,8 +1,4 @@
 .container {
-  padding-inline: space(2);
-}
-
-.content {
   @include container;
 
   display: flex;
