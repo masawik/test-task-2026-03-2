@@ -1,0 +1,38 @@
+.container {
+  padding-inline: space(2);
+}
+
+.content {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space(4);
+  align-items: center;
+
+  padding-block: space(8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: space(2);
+  align-items: stretch;
+
+  width: 100%;
+  max-width: 400px;
+}
+
+.submitBtn {
+  font-weight: bold;
+}
+
+.formError {
+  padding: space(2);
+  border-radius: space(1);
+
+  font-size: 1.125rem;
+  color: color("error-text");
+
+  background-color: color("error-bg");
+}

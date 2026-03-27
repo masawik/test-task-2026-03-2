@@ -1,5 +1,7 @@
 'use client'
 
+import { Button } from '../Button'
+
 import type { ProductDTO } from '@/backend'
 
 export interface AddToCartProps {
@@ -7,5 +9,5 @@ export interface AddToCartProps {
 }
 
 export const AddToCart = (_: AddToCartProps) => {
-  return <button className="button">Add to cart</button>
+  return <Button className="button">Add to cart</Button>
 }

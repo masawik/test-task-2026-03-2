@@ -1,0 +1,13 @@
+.TextField {
+  display: flex;
+  flex-direction: column;
+  gap: space(1);
+}
+
+.label {
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: color("error-text");
+}

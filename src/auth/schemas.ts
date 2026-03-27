@@ -3,11 +3,18 @@ import z from 'zod'
 import type { ApiError } from '@/backend'
 
 const STRING_MIN_LENGTH = 3
-const requiredString = z.string().trim().min(STRING_MIN_LENGTH)
+const minTrimmedString = (min: number, message: string) =>
+  z.string().trim().min(min, { message })
 
 export const LogInFormDataSchema = z.object({
-  username: requiredString,
-  password: requiredString,
+  username: minTrimmedString(
+    STRING_MIN_LENGTH,
+    `Username cannot be shorter than ${STRING_MIN_LENGTH} characters`,
+  ),
+  password: minTrimmedString(
+    STRING_MIN_LENGTH,
+    `Password cannot be shorter than ${STRING_MIN_LENGTH} characters`,
+  ),
 })
 export type LogInFormData = z.infer<typeof LogInFormDataSchema>
 

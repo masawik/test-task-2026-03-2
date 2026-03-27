@@ -17,8 +17,11 @@ import {
   type LogInFormState,
 } from '@/auth/schemas'
 import { ApiErrorSchema } from '@/backend'
-import { Input } from '@/components/Input'
-import { formDataToObject } from '@/lib'
+import { Button } from '@/components/Button'
+import { TextField } from '@/components/TextField'
+import { cn, formDataToObject } from '@/lib'
+
+import s from './page.module.scss'
 
 const isLogInFormDataError = (
   state: LogInFormState,
@@ -87,33 +90,40 @@ export const LogIn = () => {
     state && ApiErrorSchema.safeParse(state).data?.message
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} ref={formRef}>
-        <div>
-          username
-          <Input name="username" type="text" />
-          {errors?.fieldErrors.username && (
-            <div>{errors?.fieldErrors.username[0]}</div>
+    <main className={s.container}>
+      <div className={s.content}>
+        <h1>Login</h1>
+
+        <form className={s.form} onSubmit={handleSubmit} ref={formRef}>
+          <TextField
+            label="Username"
+            name="username"
+            type="text"
+            errorMessage={errors?.fieldErrors.username?.[0]}
+          />
+
+          <TextField
+            label="Password"
+            name="password"
+            type="password"
+            errorMessage={errors?.fieldErrors.password?.[0]}
+          />
+
+          {apiErrorMessage && (
+            <div className={s.formError}>Error: {apiErrorMessage}</div>
           )}
-        </div>
 
-        <div>
-          password
-          <Input name="password" type="password" />
-          {errors?.fieldErrors.password && (
-            <div>{errors?.fieldErrors.password[0]}</div>
-          )}
-        </div>
-
-        {apiErrorMessage && <div>Error: {apiErrorMessage}</div>}
-
-        <button type="submit" disabled={isPending || !!errors}>
-          log in
-        </button>
-
-        {isPending && <div>PENDING</div>}
-      </form>
-    </div>
+          <Button
+            className={cn('button', s.submitBtn)}
+            type="submit"
+            disabled={!!errors}
+            loading={isPending}
+          >
+            Login
+          </Button>
+        </form>
+      </div>
+    </main>
   )
 }
 

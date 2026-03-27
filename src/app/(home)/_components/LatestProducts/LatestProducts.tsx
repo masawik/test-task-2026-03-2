@@ -11,7 +11,7 @@ export const LatestProducts = async () => {
   return (
     <section className={s.container}>
       <div className={s.content}>
-        <h2 className={s.title}>Latest Products</h2>
+        <h1 className={s.title}>Latest Products</h1>
 
         <ul className={s.productsList} aria-label="prducts list">
           {items.products.map((p, index) => (

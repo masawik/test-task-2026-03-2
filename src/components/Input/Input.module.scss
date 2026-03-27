@@ -1,0 +1,10 @@
+.Input {
+  padding: space(3) space(2);
+  border-radius: space(1);
+  outline-width: 2px;
+  outline-offset: -1px;
+}
+
+.input::placeholder {
+  color: color("text-secondary");
+}

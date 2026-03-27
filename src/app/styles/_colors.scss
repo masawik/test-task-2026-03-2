@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $colors-primitive: (
   white: #ffffff,
   gray: (
@@ -11,6 +13,9 @@ $colors-primitive: (
     900: #14151c,
   ),
   red: (
+    200: #feebe7,
+    300: #ec8e7b,
+    450: #d13415,
     500: #d10026,
   ),
 );
@@ -20,11 +25,14 @@ $colors-semantic: (
   text: map-get(map-get($colors-primitive, blue), 750),
   text-secondary: map-get(map-get($colors-primitive, gray), 300),
   text-foreground: map-get($colors-primitive, white),
+  error-text: map-get(map-get($colors-primitive, red), 450),
   background: map-get($colors-primitive, white),
   accent: map-get(map-get($colors-primitive, red), 500),
   border: map-get(map-get($colors-primitive, gray), 200),
   primary: map-get(map-get($colors-primitive, blue), 800),
   surface-bg: map-get(map-get($colors-primitive, blue), 900),
+  error-border: map-get(map-get($colors-primitive, red), 300),
+  error-bg: map-get(map-get($colors-primitive, red), 200),
 );
 
 @function color($name, $shade: null) {
