@@ -1,4 +1,4 @@
-import { cn } from '@/lib'
+import { cn } from '@/lib/cn'
 
 import s from './Button.module.scss'
 

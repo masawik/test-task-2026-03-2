@@ -19,7 +19,8 @@ import {
 import { ApiErrorSchema } from '@/backend'
 import { Button } from '@/components/Button'
 import { TextField } from '@/components/TextField'
-import { cn, formDataToObject } from '@/lib'
+import { cn } from '@/lib/cn'
+import { formDataToObject } from '@/lib/formDataToObject'
 
 import s from './page.module.scss'
 

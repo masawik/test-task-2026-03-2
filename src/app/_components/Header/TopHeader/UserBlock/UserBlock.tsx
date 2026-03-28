@@ -1,6 +1,5 @@
-import Link from 'next/link'
-
 import { getCurrentUser } from '@/auth/currentUser'
+import { HoverPrefetchLink } from '@/components/HoverPrefetchLink'
 import { User } from '@/components/icons'
 
 import { LogOutButton } from './LogOutButton'
@@ -11,10 +10,10 @@ export const UserBlock = async () => {
 
   if (!user) {
     return (
-      <Link className={`${s.link}`} href="/login">
+      <HoverPrefetchLink className={`${s.link}`} href="/login">
         <User />
         Login
-      </Link>
+      </HoverPrefetchLink>
     )
   }
 

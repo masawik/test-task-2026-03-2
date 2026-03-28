@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
 import { Mail, MapPin, Phone } from '@/components/icons'
-import { cn } from '@/lib'
+import { cn } from '@/lib/cn'
 
 import s from './TopHeader.module.scss'
 import { UserBlock } from './UserBlock/UserBlock'

@@ -1,5 +1,5 @@
 import { TokensDTOSchema } from '@/backend'
-import { stringToDate } from '@/lib'
+import { stringToDate } from '@/lib/schemaUtils'
 
 import type z from 'zod'
 

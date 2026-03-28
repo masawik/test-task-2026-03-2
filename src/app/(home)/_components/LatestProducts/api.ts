@@ -1,7 +1,7 @@
 import { cacheTag } from 'next/cache'
 
 import { backendApi } from '@/backend/api'
-import { objectKeys } from '@/lib'
+import { objectKeys } from '@/lib/objectKeys'
 
 import { LatestProductsItemSchema } from './schemas'
 

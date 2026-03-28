@@ -1,4 +1,4 @@
-import { parseJSON } from '@/lib'
+import { parseJSON } from '@/lib/parseJSON'
 
 import { SessionPayloadSchema } from './schemas'
 

@@ -4,7 +4,7 @@ import {
   type HTMLInputTypeAttribute,
 } from 'react'
 
-import { cn } from '@/lib'
+import { cn } from '@/lib/cn'
 
 import s from './Input.module.scss'
 

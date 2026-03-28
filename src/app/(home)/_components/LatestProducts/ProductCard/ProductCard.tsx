@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { getCurrentUser } from '@/auth/currentUser'
 import { AddToCart } from '@/components/AddToCart'
-import { cn } from '@/lib'
+import { cn } from '@/lib/cn'
 
 import s from './ProductCard.module.scss'
 
