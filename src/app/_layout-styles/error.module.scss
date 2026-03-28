@@ -1,0 +1,28 @@
+.container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space(6);
+  align-items: center;
+
+  height: 100%;
+  padding-block: space(10);
+}
+
+.title {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+}
+
+.digest {
+  margin-top: auto;
+  color: color("text-secondary");
+}
+
+.homeLink {
+  font-size: 1.5rem;
+}

@@ -19,7 +19,7 @@ export const Button = ({
     <button
       {...props}
       disabled={computedDisabled}
-      className={cn(s.Button, className)}
+      className={cn('button', className)}
     >
       {loading ? (
         <div className={s.loaderContainer}>

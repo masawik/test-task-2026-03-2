@@ -1,22 +1,9 @@
 @use "./vendors/modern-normalize";
+@use "./resets";
 @use "./spaces";
 @use "./colors";
 @use "./typography";
 @use "./globals";
 @use "./components";
-
-@layer reset {
-  ul,
-  ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  button,
-  input {
-    all: unset;
-  }
-}
 
 @layer reset, base, theme, components;

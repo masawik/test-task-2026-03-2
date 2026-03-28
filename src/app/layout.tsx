@@ -2,8 +2,8 @@ import { Suspense } from 'react'
 
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
+import s from './_layout-styles/layout.module.scss'
 import { appFontVariableClassNames } from './fonts'
-import s from './layout.module.scss'
 
 import type { Metadata, Viewport } from 'next'
 
@@ -17,9 +17,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: '#14151c',
   width: 'device-width',
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   colorScheme: 'only light',
 }
 

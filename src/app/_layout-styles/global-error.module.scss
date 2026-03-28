@@ -1,0 +1,36 @@
+.body {
+  min-height: 100%;
+  margin: 0;
+  background-color: color("background");
+}
+
+.container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  gap: space(6);
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
+  padding-block: space(10);
+}
+
+.title {
+  max-width: 28rem;
+  text-align: center;
+}
+
+.subtitle {
+  max-width: 24rem;
+  margin: 0;
+
+  font-size: 1.125rem;
+  color: color("text-secondary");
+  text-align: center;
+}
+
+.retry {
+  font-size: 1.5rem;
+}
