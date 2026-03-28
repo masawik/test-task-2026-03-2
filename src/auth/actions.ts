@@ -3,7 +3,7 @@ import { isRedirectError } from 'next/dist/client/components/redirect-error'
 import { redirect } from 'next/navigation'
 import z from 'zod'
 
-import { ApiErrorSchema } from '@/backend'
+import { ApiErrorSchema, TokensDTOSchema } from '@/backend'
 import { backendApi } from '@/backend/api'
 import { isDev } from '@/config/constants'
 import { isApiClientError } from '@/lib/ApiClient'
@@ -26,7 +26,9 @@ export const logIn = async (
 
   try {
     const response = await backendApi.logIn(validatedFormData.data)
-    await setSessionByTokens(response)
+    const tokens = TokensDTOSchema.parse(response)
+
+    await setSessionByTokens(tokens)
     redirect('/')
   } catch (e) {
     if (isRedirectError(e)) {
