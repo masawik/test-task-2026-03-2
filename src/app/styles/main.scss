@@ -1,8 +1,6 @@
 @use "./vendors/modern-normalize";
 @use "./resets";
-@use "./spaces";
-@use "./colors";
-@use "./typography";
+@use "./root-vars";
 @use "./globals";
 @use "./components";
 

@@ -1,0 +1,19 @@
+@use "./utils" as *;
+
+:root {
+  @each $name, $value in $colors-semantic {
+    --color-#{$name}: #{$value};
+  }
+}
+
+:root {
+  @each $key, $value in $spacing-scale {
+    --space-#{$key}: #{$value};
+  }
+}
+
+:root {
+  @each $name, $value in $fonts-semantic {
+    --font-#{$name}: #{$value};
+  }
+}

@@ -26,9 +26,3 @@ $fonts-semantic: (
 @function font-var($name) {
   @return var(--font-#{$name});
 }
-
-:root {
-  @each $name, $value in $fonts-semantic {
-    --font-#{$name}: #{$value};
-  }
-}

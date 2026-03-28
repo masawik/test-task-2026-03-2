@@ -47,9 +47,3 @@ $colors-semantic: (
 @function color-var($name) {
   @return var(--color-#{$name});
 }
-
-:root {
-  @each $name, $value in $colors-semantic {
-    --color-#{$name}: #{$value};
-  }
-}

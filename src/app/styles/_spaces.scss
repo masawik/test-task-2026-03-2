@@ -14,12 +14,6 @@ $spacing-scale: (
   16: 4rem,
 );
 
-:root {
-  @each $key, $value in $spacing-scale {
-    --space-#{$key}: #{$value};
-  }
-}
-
 @function space($key) {
   $value: map.get($spacing-scale, $key);
 
