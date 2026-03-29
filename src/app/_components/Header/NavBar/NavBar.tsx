@@ -4,7 +4,7 @@ import s from './NavBar.module.scss'
 
 const ROUTES = [
   { href: '/', title: 'Home' },
-  { href: '/test', title: 'Hot Deals' },
+  { href: '#', title: 'Hot Deals' },
   { href: '#', title: 'Categories' },
   { href: '#', title: 'Laptops' },
   { href: '#', title: 'Smartphones' },
