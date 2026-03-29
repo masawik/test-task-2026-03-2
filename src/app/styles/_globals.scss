@@ -3,6 +3,10 @@
 @use "./typography" as t;
 
 @layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
   html,
   body {
     height: 100%;
