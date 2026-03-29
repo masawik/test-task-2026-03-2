@@ -1,4 +1,8 @@
-# Fast start
+[DEMO](https://test-task-2026-03-2.vercel.app/)
+
+or
+
+# Local fast start
 
 ```bash
 git clone https://github.com/masawik/test-task-2026-03-2.git
