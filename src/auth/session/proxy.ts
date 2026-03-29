@@ -87,8 +87,6 @@ export const handleSessionRefresh = async (
     Number(process.env.DUMMY_TOKEN_EXPIRES_IN_MINS),
   )
 
-  // Обновляем cookie в заголовках запроса, чтобы SSR-рендеринг
-  // на этом же запросе уже видел свежую сессию
   const requestHeaders = new Headers(request.headers)
   const existingCookies = request.headers.get('cookie') ?? ''
   const updatedCookies = [
@@ -103,7 +101,6 @@ export const handleSessionRefresh = async (
     request: { headers: requestHeaders },
   })
 
-  // Устанавливаем обновлённую cookie на ответ браузеру
   response.cookies.set(SESSION_COOKIE_NAME, encodedSession, {
     ...SESSION_COOKIE_CONFIG,
     expires: expiresAt,

@@ -11,13 +11,18 @@ export const LatestProducts = async () => {
   'use cache'
   cacheTag('latestProducts')
 
+  /**
+   * There is no Suspense on this component intentionally,
+   * so that the page content is rendered directly in html, without an intermediate loader.
+   * When navigating from other app pages, a loader is implemented on the links themselves @see AppLink
+   */
   const items = await getLatestProducts()
 
   return (
     <section className={s.container}>
       <h1 className={s.title}>Latest Products</h1>
 
-      <ul className={s.productsList} aria-label="prducts list">
+      <ul className={s.productsList} aria-label="products list">
         {items.products.map((p, index) => (
           <li key={p.id}>
             <ProductCard
