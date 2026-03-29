@@ -1,3 +1,5 @@
+import { cacheTag } from 'next/cache'
+
 import { getLatestProducts } from './api'
 import s from './LatestProducts.module.scss'
 import { ProductCard } from './ProductCard'
@@ -6,6 +8,9 @@ import { ProductCard } from './ProductCard'
 const PRIORITY_IMAGES_COUNT = 6
 
 export const LatestProducts = async () => {
+  'use cache'
+  cacheTag('latestProducts')
+
   const items = await getLatestProducts()
 
   return (

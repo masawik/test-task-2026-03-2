@@ -1,5 +1,8 @@
 import { Suspense } from 'react'
 
+import StoreUserFromServer from '@/auth/StoreUserFromServer'
+import { UserStoreProvider } from '@/stores/user/context'
+
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header'
 import s from './_layout-styles/layout.module.scss'
@@ -20,7 +23,7 @@ export const viewport: Viewport = {
   colorScheme: 'only light',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode,
@@ -28,13 +31,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={appFontVariableClassNames}>
       <body className={s.body}>
-        <Header />
+        <UserStoreProvider>
+          <StoreUserFromServer />
 
-        <div>{children}</div>
+          <Header />
 
-        <Suspense fallback={null}>
-          <Footer />
-        </Suspense>
+          <div>{children}</div>
+
+          <Suspense>
+            <Footer />
+          </Suspense>
+        </UserStoreProvider>
       </body>
     </html>
   )

@@ -1,12 +1,14 @@
-import { getCurrentUser } from '@/auth/currentUser'
+'use client'
+
 import { HoverPrefetchLink } from '@/components/HoverPrefetchLink'
 import { User } from '@/components/icons'
+import { useUserStore } from '@/stores/user/context'
 
 import { LogOutButton } from './LogOutButton'
 import s from './UserBlock.module.scss'
 
-export const UserBlock = async () => {
-  const user = await getCurrentUser()
+export const UserBlock = () => {
+  const user = useUserStore((s) => s.user)
 
   if (!user) {
     return (

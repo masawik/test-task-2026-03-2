@@ -3,7 +3,13 @@ import '@/appEnv'
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  reactCompiler: true,
+  reactCompiler: {
+    /**
+     * at the moment, "infer" causes problems when used with zustand
+     * @see https://github.com/facebook/react/issues/33302
+     */
+    compilationMode: 'annotation',
+  },
   cacheComponents: true,
   sassOptions: {
     silenceDeprecations: [ 'if-function' ],

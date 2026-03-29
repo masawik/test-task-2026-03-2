@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import { Mail, MapPin, Phone } from '@/components/icons'
 import { cn } from '@/lib/cn'
 
@@ -32,9 +30,7 @@ export const TopHeader = ({ className, ...props }: TopHeaderProps) => {
         </address>
 
         <div className={s.userBlock}>
-          <Suspense fallback={<div className={cn('spinner', s.loader)} />}>
-            <UserBlock />
-          </Suspense>
+          <UserBlock />
         </div>
       </div>
     </div>
