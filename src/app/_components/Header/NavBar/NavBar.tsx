@@ -4,7 +4,7 @@ import s from './NavBar.module.scss'
 
 const ROUTES = [
   { href: '/', title: 'Home' },
-  { href: '#', title: 'Hot Deals' },
+  { href: '/test', title: 'Hot Deals' },
   { href: '#', title: 'Categories' },
   { href: '#', title: 'Laptops' },
   { href: '#', title: 'Smartphones' },
@@ -19,7 +19,6 @@ export const NavBar = () => {
         <ul className={s.list}>
           {ROUTES.map((route) => (
             <li key={route.title}>
-              {/* TODO aria-current="page" and active state */}
               <AppLink href={route.href} className={s.tab}>
                 {route.title}
               </AppLink>

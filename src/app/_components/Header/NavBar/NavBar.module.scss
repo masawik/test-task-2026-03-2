@@ -22,6 +22,10 @@
   color: color("text-light");
 }
 
+.tab[aria-current="page"] {
+  color: color(accent);
+}
+
 @media (max-width: 768px) {
   .list {
     justify-content: center;

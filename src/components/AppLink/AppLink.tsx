@@ -1,6 +1,7 @@
 'use client'
 
 import Link, { useLinkStatus, type LinkProps } from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import { cn } from '@/lib/cn'
@@ -25,18 +26,27 @@ export const AppLink = ({
   className,
   noLoader,
   children,
+  href,
   ...props
 }: AppLinkProps) => {
   'use memo'
   const [ hovered, setHovered ] = useState(false)
   const linkPrefetch = prefetch === 'hover' ? hovered : prefetch
 
+  const pathname = usePathname()
+  const isActive = (() => {
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
+  })()
+
   return (
     <Link
       {...props}
+      href={href}
       className={cn(s.link, className)}
       prefetch={linkPrefetch}
       onMouseEnter={() => setHovered(true)}
+      aria-current={isActive ? 'page' : undefined}
     >
       {children}
 
