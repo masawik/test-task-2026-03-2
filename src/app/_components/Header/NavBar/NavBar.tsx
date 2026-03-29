@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { AppLink } from '@/components/AppLink'
 
 import s from './NavBar.module.scss'
 
@@ -20,9 +20,9 @@ export const NavBar = () => {
           {ROUTES.map((route) => (
             <li key={route.title}>
               {/* TODO aria-current="page" and active state */}
-              <Link href={route.href} className={s.tab}>
+              <AppLink href={route.href} className={s.tab}>
                 {route.title}
-              </Link>
+              </AppLink>
             </li>
           ))}
         </ul>

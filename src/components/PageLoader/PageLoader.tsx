@@ -1,6 +1,6 @@
-import s from './_layout-styles/loading.module.scss'
+import s from './PageLoader.module.scss'
 
-export default function loading() {
+export const PageLoader = () => {
   return (
     <div className={s.container}>
       <div className={`spinner dark ${s.spinner}`} />

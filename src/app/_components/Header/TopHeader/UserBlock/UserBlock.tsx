@@ -1,6 +1,6 @@
 'use client'
 
-import { HoverPrefetchLink } from '@/components/HoverPrefetchLink'
+import { AppLink } from '@/components/AppLink'
 import { User } from '@/components/icons'
 import { useUserStore } from '@/stores/user/context'
 
@@ -12,10 +12,10 @@ export const UserBlock = () => {
 
   if (!user) {
     return (
-      <HoverPrefetchLink className={`${s.link}`} href="/login">
+      <AppLink className={`${s.link}`} href="/login" prefetch="hover">
         <User />
         Login
-      </HoverPrefetchLink>
+      </AppLink>
     )
   }
 

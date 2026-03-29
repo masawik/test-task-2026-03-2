@@ -100,12 +100,14 @@ export const LogIn = () => {
           name="username"
           type="text"
           errorMessage={errors?.fieldErrors.username?.[0]}
+          defaultValue="emilys"
         />
 
         <TextField
           label="Password"
           name="password"
           type="password"
+          defaultValue="emilyspass"
           errorMessage={errors?.fieldErrors.password?.[0]}
         />
 

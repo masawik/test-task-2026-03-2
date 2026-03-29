@@ -17,7 +17,7 @@ export const LogOutButton = () => {
     <button
       onClick={handleClick}
       className={cn(s.button, {
-        [`${s.pending}`]: isPending,
+        'pending-link': isPending,
       })}
     >
       <User />

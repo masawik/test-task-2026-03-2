@@ -1,7 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import { AppLink } from '@/components/AppLink'
 
 import s from './_layout-styles/error.module.scss'
 
@@ -24,9 +25,9 @@ export default function Error({ error }: ErrorProps) {
       {isHomePage ? (
         <div>Please try to visit this page later.</div>
       ) : (
-        <Link href="/" className={`button ${s.homeLink}`}>
+        <AppLink href="/" className={`button ${s.homeLink}`}>
           Home
-        </Link>
+        </AppLink>
       )}
 
       <span className={s.digest}>{error.digest}</span>

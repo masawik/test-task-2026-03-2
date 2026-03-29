@@ -1,0 +1,41 @@
+@layer components {
+  .pending-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pending-link::before {
+    pointer-events: none;
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    transform: translateX(-110%);
+
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.3) 25%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.3) 75%,
+      transparent 100%
+    );
+
+    animation: pending-shimmer 2s ease-in-out infinite;
+  }
+
+  @keyframes pending-shimmer {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(110%);
+    }
+  }
+
+  .pending-link {
+    pointer-events: none;
+    opacity: 0.9;
+  }
+}

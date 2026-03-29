@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
+import { AppLink } from '@/components/AppLink'
 import { cn } from '@/lib/cn'
 
 import { AddToCartIfAuth } from './AddToCartIfAuth'
@@ -37,9 +37,9 @@ export const ProductCard = ({
       </div>
 
       <div className={s.info}>
-        <Link href="#" className={s.title}>
+        <AppLink href="/test" className={s.title}>
           {product.title}
-        </Link>
+        </AppLink>
         <div className={s.category}>{product.category}</div>
         <div className={s.price}>
           {CURRENCY_CHAR}
