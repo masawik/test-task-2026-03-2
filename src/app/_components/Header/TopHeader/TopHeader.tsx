@@ -6,6 +6,18 @@ import { UserBlock } from './UserBlock/UserBlock'
 
 export type TopHeaderProps = React.ComponentProps<'div'>
 
+const ADDRESS_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'AbeloHost',
+  telephone: '+021955184',
+  email: 'shop@abelohost.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '1734 Stonecoal Road',
+  },
+}
+
 export const TopHeader = ({ className, ...props }: TopHeaderProps) => {
   return (
     <div className={cn(s.container, className)} {...props}>
@@ -26,7 +38,10 @@ export const TopHeader = ({ className, ...props }: TopHeaderProps) => {
             1734 Stonecoal Road
           </span>
 
-          {/* TODO тут ещё можно добавить SEO штуки для карточки бизнеса в поисковиках */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(ADDRESS_SCHEMA) }}
+          />
         </address>
 
         <div className={s.userBlock}>

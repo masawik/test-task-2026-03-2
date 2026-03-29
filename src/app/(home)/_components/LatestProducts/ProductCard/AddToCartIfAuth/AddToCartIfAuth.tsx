@@ -12,7 +12,6 @@ export interface AddToCartIfAuthProps {
 export const AddToCartIfAuth = (_: AddToCartIfAuthProps) => {
   const user = useUserStore((store) => store.user)
 
-  // TODO добавить плейсхолдер чтобы не скакали карточки
   if (!user) return <div role="presentation" className="button-placeholder" />
 
   return <Button className="button">Add to cart</Button>

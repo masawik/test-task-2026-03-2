@@ -10,7 +10,6 @@ export const Header = async () => {
 
   return (
     <header>
-      {/* TODO МБ position: sticky? */}
       <TopHeader />
       <BannerHeader />
       <NavBar />

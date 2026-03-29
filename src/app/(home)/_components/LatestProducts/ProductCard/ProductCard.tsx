@@ -23,7 +23,6 @@ export const ProductCard = ({
 }: ProductCardProps) => {
   return (
     <article className={cn(s.Card, className)}>
-      {/* TODO Schema.org */}
       <div className={s.imageContainer}>
         <Image
           className={s.image}
@@ -37,7 +36,7 @@ export const ProductCard = ({
       </div>
 
       <div className={s.info}>
-        <AppLink href="/test" className={s.title}>
+        <AppLink href="#" className={s.title}>
           {product.title}
         </AppLink>
         <div className={s.category}>{product.category}</div>
